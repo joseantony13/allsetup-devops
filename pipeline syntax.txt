@@ -1,0 +1,30 @@
+pipeline syntax  
+
+pipeline{
+    
+    agent any
+    tools{
+        maven "mymaven"
+    }
+    stages{
+        stage("Git Clone"){
+            steps{
+                git "https://github.com/Vasanth-2414/ajju.git"
+            }
+        }
+        stage("Build"){
+            steps{
+                sh "mvn clean install"
+            }
+        }
+        stage("Artifact Uploader"){
+            steps{
+                
+            }
+        }
+        stage("Deploy"){
+            steps{
+               
+            }
+        }
+}
